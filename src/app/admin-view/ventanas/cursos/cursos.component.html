@@ -1,0 +1,30 @@
+<form class="max-w-md mx-auto p-8 bg-white shadow-md rounded" (ngSubmit)="onSubmit()">
+    <div class="mb-4">
+      <label for="name" class="block text-gray-700 font-bold mb-2">Nombre del curso:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="curso.name" placeholder="Nombre del curso" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    </div>
+    
+    <div class="mb-4">
+      <label for="description" class="block text-gray-700 font-bold mb-2">Descripción:</label>
+      <textarea id="description" name="description" [(ngModel)]="curso.description" placeholder="Descripción del curso" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-24 resize-none"></textarea>
+    </div>
+    
+    <div class="mb-4">
+      <label for="language" class="block text-gray-700 font-bold mb-2">Idioma:</label>
+      <input type="text" id="language" name="language" [(ngModel)]="curso.language" placeholder="Idioma del curso" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    </div>
+    
+    <div class="mb-4">
+      <label for="level" class="block text-gray-700 font-bold mb-2">Nivel:</label>
+      <input type="text" id="level" name="level" [(ngModel)]="curso.level" placeholder="Nivel del curso" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    </div>
+    
+    <!-- Botón de envío -->
+    <div class="flex justify-end">
+      <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+        Guardar
+      </button>
+    </div>
+  </form>
+  
+  

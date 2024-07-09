@@ -1,0 +1,123 @@
+<h1 class="text-3xl font-bold text-white mb-4 bg-blue-700 text-center">Administrar usuarios</h1>
+
+@if(isedited){
+  <h3 class="text-2xl font-bold text-gray-600 mb-4 text-center">Actualizar usuario</h3>
+}@else{
+  <h3 class="text-2xl font-bold text-gray-600 mb-4 text-center">Añadir usuarios</h3>
+}
+<form class="max-w-md mx-auto" [formGroup]="form" (ngSubmit)="update()">
+  <div class="grid md:grid-cols-2 md:gap-6">
+    <div class="relative z-0 w-full mb-5 group">
+        <input type="text" name="fullName" id="fullName" class="block py-2.5 px-0 w-full text-sm text-slate-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required  formControlName="fullName"/>
+        <label for="floating_first_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre completo</label>
+    </div>
+    <div class="relative z-0 w-full mb-5 group">
+        <input type="text" name="dni" id="dni" class="block py-2.5 px-0 w-full text-sm text-slate-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required formControlName="dni" />
+        <label for="floating_last_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Cedula</label>
+    </div>
+  </div>
+  <div class="relative z-0 w-full mb-5 group">
+    <input type="text" name="phone" id="phone" class="block py-2.5 px-0 w-full text-sm text-slate-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required formControlName="phone"/>
+    <label for="floating_email" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Telefono</label>
+</div>
+  <div class="relative z-0 w-full mb-5 group">
+      <input type="email" name="email" id="email" class="block py-2.5 px-0 w-full text-sm text-slate-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required formControlName="email"/>
+      <label for="floating_email" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Correo</label>
+  </div>
+  <div class="relative z-0 w-full mb-5 group">
+      <input type="password" name="password" id="password" class="block py-2.5 px-0 w-full text-sm text-slate-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required formControlName="password" />
+      <label for="floating_password" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Contraseña</label>
+  </div>
+
+
+  <div class="grid md:grid-cols-2 md:gap-6">
+    <div class="relative z-0 w-full mb-5 group">
+      <div class="w-full">
+        <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Edad</label>
+        <input type="number" name="age" id="age" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="23" required formControlName="age">
+        </div>
+    </div>
+    <div class="relative z-0 w-full mb-5 group">
+      <div>
+        <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rol</label>
+        <select id="rol" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" formControlName="rol">
+            <option selected="">Select category</option>
+            <option value="2">Estudiante</option>
+            <option value="3">Profesor</option>
+        </select>
+    </div>
+    </div>
+  </div>
+  @if(isedited){
+    <button type="submit" id="guardbutttom" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Editar</button>
+  }@else {
+    <button type="submit" id="guardbutttom" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Guardar</button>
+  }
+</form>
+
+
+<div class="container mx-auto mt-5">
+  <div class="overflow-x-auto bg-white dark:bg-gray-800 shadow-md rounded-lg max-w-4xl mx-auto">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <tr>
+          <th scope="col" class="px-6 py-3">
+            id
+          </th>
+          <th scope="col" class="px-6 py-3">
+            nombre completo
+          </th>
+          <th scope="col" class="px-6 py-3">
+            cedula
+          </th>
+          <th scope="col" class="px-6 py-3">
+            edad
+          </th>
+          <th scope="col" class="px-6 py-3">
+            telefono
+          </th>
+          <th scope="col" class="px-6 py-3">
+            email
+          </th>
+          <th scope="col" class="px-6 py-3">
+            contraseña
+          </th>
+          <th scope="col" class="px-6 py-3">
+            rol
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (user of users; track user.idusers){
+        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700" *ngIf="user.rol==2">
+          <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"  (click)="edit(user.idusers)" (click)="reloadComponent()">
+           {{user.idusers}}
+          </td>
+          <td class="px-6 py-4">
+            {{user.fullName}}
+          </td>
+          <td class="px-6 py-4">
+            {{user.dni}}
+          </td>
+          <td class="px-6 py-4">
+            {{user.age}}
+          </td>
+          <td class="px-6 py-4">
+            {{user.phone}}
+          </td>
+          <td class="px-6 py-4">
+            {{user.email}}
+          </td>
+          <td class="px-6 py-4">
+            {{user.password}}
+          </td>
+          <td class="px-6 py-4">
+              {{user.rol}}
+          </td>
+        </tr>
+
+      }
+      </tbody>
+    </table>
+  </div>
+</div>

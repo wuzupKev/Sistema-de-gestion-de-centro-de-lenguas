@@ -1,0 +1,15 @@
+<div class="container mt-3 p-1 rounded bg-Orange-600">
+    <h2 class="text-white text-center text-2xl">Editar estado</h2>
+  </div>
+  <div class="container py-5">
+    <form [formGroup]="form" (ngSubmit)="updatePeticion()">
+        <div class="mb-4">
+          <label for="status" class="block text-gray-700">Estado:</label>
+          <input id="status" formControlName="status" type="text" class="form-control shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+        </div>
+        <button type="submit" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" [disabled]="!form.valid">Actualizar</button>
+        <a routerLink="/applications" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-2">Cancelar</a>
+      </form>
+  </div>
+  
+  

@@ -1,0 +1,29 @@
+<table class="table-auto w-full border-collapse border border-slate-200">
+  <thead>
+    <tr class="bg-gray-200">
+      <th class="px-4 py-2">Nombre</th>
+      <th class="px-4 py-2">Materia</th>
+      <th class="px-4 py-2">Calificacion</th>
+      <th class="px-4 py-2">Clase</th>
+      <th class="px-4 py-2">dia</th>
+      <th class="px-4 py-2">hora de inicio</th>
+      <th class="px-4 py-2">hora de finalizacion</th>
+      <th class="px-4 py-2">salon</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(schedule of schedules;track schedule.idSchedules){
+      <tr class="border-t border-gray-200  text-white">
+        <td class="px-4 py-2">{{schedule.fullName}}</td>
+        <td class="px-4 py-2">{{schedule.subject}}</td>
+        <td class="px-4 py-2">{{schedule.grade}}</td>
+        <td class="px-4 py-2">{{schedule.name}}</td>
+        <td class="px-4 py-2">{{schedule.dayOfTheWeek}}</td>
+        <td class="px-4 py-2">{{schedule.startTime}}</td>
+        <td class="px-4 py-2">{{schedule.finishTime}}</td>
+        <td class="px-4 py-2">{{schedule.classroom_number}}</td>
+
+      </tr>
+    }
+  </tbody>
+</table>
